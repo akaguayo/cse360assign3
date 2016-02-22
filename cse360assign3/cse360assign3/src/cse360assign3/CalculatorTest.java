@@ -13,6 +13,7 @@ public class CalculatorTest {
 		assertNotNull(calc);
 	}
 	
+	@Test
 	public void testgetTotal(){
 		Calculator calc = new Calculator();
 		assertEquals(calc.getTotal(), 0);
@@ -21,6 +22,7 @@ public class CalculatorTest {
 		assertEquals(calc.getTotal(), 3);
 	}
 	
+	@Test
 	public void testadd() {
 		Calculator calc = new Calculator();
 		
@@ -34,6 +36,7 @@ public class CalculatorTest {
 		assertEquals(calc.getTotal(), 12);
 	}
 	
+	@Test
 	public void testsubtract() {
 		Calculator calc = new Calculator();
 		
@@ -41,6 +44,7 @@ public class CalculatorTest {
 		assertEquals(calc.getTotal(), -3);
 	}
 	
+	@Test
 	public void testmultiply() {
 		Calculator calc = new Calculator();
 		
@@ -52,6 +56,7 @@ public class CalculatorTest {
 		assertEquals(calc.getTotal(), 40);
 	}
 	
+	@Test
 	public void testdivide() {
 		Calculator calc = new Calculator();
 		
@@ -64,8 +69,17 @@ public class CalculatorTest {
 		assertEquals(calc.getTotal(), 0);
 	}
 	
+	@Test
 	public void testgetHistory() {
-		fail("Not yet implemented");
+		Calculator calc = new Calculator();
+		
+		calc.add(10);
+		calc.divide(2);
+		calc.subtract(3);
+		calc.multiply(3);
+		calc.add(6);
+		
+		assertEquals(calc.getHistory(), "0 + 10 / 2 - 3 * 3 + 6");
 	}
 
 }

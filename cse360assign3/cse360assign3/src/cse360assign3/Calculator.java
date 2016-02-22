@@ -4,9 +4,11 @@ package cse360assign3;
 public class Calculator {
 
 	private int total;
+	private String history;
 	
 	public Calculator () {
 		total = 0;  // not needed - included for clarity
+		history = "0";
 	}
 	
 	public int getTotal () {
@@ -15,14 +17,17 @@ public class Calculator {
 	
 	public void add (int value) {
 		total = total + value;
+		history = history + " + " + value;
 	}
 	
 	public void subtract (int value) {
 		total = total - value;
+		history = history + " - " + value;
 	}
 	
 	public void multiply (int value) {
 		total = total * value;
+		history = history + " * " + value;
 	}
 	
 	public void divide (int value) {
@@ -32,9 +37,11 @@ public class Calculator {
 		else {
 			total = total / value;
 		}
+		
+		history = history + " / " + value;
 	}
 	
 	public String getHistory () {
-		return "";
+		return history;
 	}
 }
